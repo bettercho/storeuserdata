@@ -13,8 +13,21 @@
         android:text="Start Recording"/>
 
     <Button
+        android:id="@+id/bt_camcording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Camcording"/>
+
+    <Button
         android:id="@+id/bt_play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start Playing"/>
+
+
+    <SurfaceView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
