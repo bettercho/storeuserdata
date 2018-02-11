@@ -2,6 +2,8 @@ package com.codetravel.storeuserdata;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,8 +22,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.EventListener;
 
 import static android.content.ContentValues.TAG;
 
@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
     Button mBtInternal = null;
     Button mBtExternal = null;
     Button mBtPrint = null;
+    Button mBtDatabase = null;
 
     EditText mEtInput = null;
     TextView mTvOutput = null;
@@ -49,6 +50,10 @@ public class MainActivity extends Activity {
         mBtInternal.setOnClickListener(listener);
         mBtExternal.setOnClickListener(listener);
         mBtPrint.setOnClickListener(listener);
+
+        mBtDatabase = (Button)findViewById(R.id.bt_database);
+        mBtDatabase.setOnClickListener(listener);
+
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -85,6 +90,11 @@ public class MainActivity extends Activity {
                         Log.d(TAG, "External Storage is not ready");
                     }
 
+                    break;
+
+                case R.id.bt_database:
+                    Intent intent = new Intent(MainActivity.this, DBActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.bt_print:
                     StringBuffer buffer = new StringBuffer();

@@ -36,4 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Print message" />
+
+    <Button
+        android:id="@+id/bt_database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DataBase" />
+
+
 </LinearLayout>
